@@ -1,14 +1,20 @@
-{% extends "tasks/layout.html" %}
-
-{% block body %}
-    <h1>Tasks</h1>
-    <ul>
-        {% for task in tasks %}
-            <li>{{ task }}</li>
-        {% empty %}
-            <li>No tasks.</li>
-        {% endfor %}
-    </ul>
-    <a href="{% url 'tasks:add' %}">Add Task</a>
-    <a href="{% url 'tasks:remove'%}">Remove Task</a>
+{% extends "tasks/layout.html" %} {% block body %}
+<h1>Tasks</h1>
+<div id="buttons-div">
+  <button class="button-5" role="button" onClick="self.location='{% url 'tasks:add' %}'">
+    Add Task
+  </button>
+  <button class="button-5" role="button" onClick="self.location='{% url 'tasks:remove' %}'">
+    Remove Task
+  </button>
+</div>
+<div id="tasks-div">
+  <ul>
+    {% for task in tasks %}
+    <li>{{ task }}</li>
+    {% empty %}
+    <li>No tasks.</li>
+    {% endfor %}
+  </ul>
+</div>
 {% endblock %}

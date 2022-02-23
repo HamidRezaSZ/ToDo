@@ -1,14 +1,16 @@
 from django.contrib.auth import logout, authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
-from django.http.response import HttpResponse,HttpResponseRedirect
+from django.http.response import HttpResponse, HttpResponseRedirect
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render
 from django.urls import reverse
 
 from .forms import SignUpForm
 
+
 def index(request):
-    return render(request,"users/index.html")
+    return render(request, "users/index.html")
+
 
 @csrf_exempt
 def signup(request):

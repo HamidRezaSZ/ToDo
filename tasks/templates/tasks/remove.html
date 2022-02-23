@@ -1,11 +1,10 @@
-{% extends "tasks/layout.html" %}
-
-{% block body %}
-    <h1>Remove Task</h1>
-    <form action="{% url 'tasks:remove'%}" method="post">
-        {% csrf_token %}
-        {{ form }}
-        <input type="submit">
-    </form>
-    <a href="{% url 'tasks:index' %}">View All Tasks</a>
+{% extends "tasks/layout.html" %} {% block body %}
+<h2>Remove Task</h2>
+<div id="remove-div">
+  <form action="{% url 'tasks:remove'%}" method="post">
+    {% csrf_token %} {{ form }}
+    <input class="button-34" role="button" type="submit" />
+  </form>
+  <button class="button-30" role="button" onClick="self.location='{% url 'tasks:index' %}'">View All Tasks</button>
+</div>
 {% endblock %}

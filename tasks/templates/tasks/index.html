@@ -9,5 +9,6 @@
             <li>No tasks.</li>
         {% endfor %}
     </ul>
-    <a href="{% url 'tasks:add' %}">Add New Task</a>
+    <a href="{% url 'tasks:add' %}">Add Task</a>
+    <a href="{% url 'tasks:remove'%}">Remove Task</a>
 {% endblock %}
